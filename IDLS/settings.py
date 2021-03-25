@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import django_heroku
-#import pymysql
-import mysqlclient
+import pymysql
+#import mysqlclient
 from pathlib import Path
 #pymysql.version_info = (1, 3, 13, "final", 0)
 #pymysql.install_as_MySQLdb()
@@ -79,8 +79,7 @@ WSGI_APPLICATION = 'IDLS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-'''
-DATABASES = {
+'''BASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -90,7 +89,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'idls_db',
+        'NAME': 'heroku_0aefc07ce57e397',
         'USER': 'b001be2b5d7012',
         'PASSWORD': 'e795d093',
         'HOST': 'us-cdbr-east-03.cleardb.com',   # Or an IP Address that your DB is hosted on
