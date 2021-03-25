@@ -75,13 +75,24 @@ WSGI_APPLICATION = 'IDLS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'idls_db',
+        'USER': 'b001be2b5d7012',
+        'PASSWORD': 'e795d093',
+        'HOST': 'us-cdbr-east-03.cleardb.com',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+
 
 
 # Password validation
