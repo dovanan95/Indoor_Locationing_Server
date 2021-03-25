@@ -25,7 +25,8 @@ def api_handler(request):
         Location_ID_i = income_data['loc_id']
         Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
-        Mes = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, Location_ID = Location_ID_i, Time = Time_i)
+        Mes = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
+        Location_ID = Location_ID_i, Time = Time_i)
         Mes.save()
 
         #return HttpResponse('OK')
@@ -43,7 +44,8 @@ def api_handler_mobile(request):
         Location_ID_i = income_data['loc_id']
         Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
-        prod = Production(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, Location_ID = Location_ID_i, Time = Time_i)
+        prod = Production(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
+        Location_ID = Location_ID_i, Time = Time_i)
         prod.save()
 
         return HttpResponse('OK')
