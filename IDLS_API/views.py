@@ -31,7 +31,7 @@ def api_handler(request):
 
         #return HttpResponse('OK')
         return HttpResponse(BSSID_i, RSSI_i)
-    return HttpResponse('hehe')
+    return HttpResponse('Toang rồi')
 
 @csrf_exempt
 def api_handler_mobile(request):
