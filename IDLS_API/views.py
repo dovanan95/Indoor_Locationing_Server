@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
 import os
-from IDLS_API.models import Measurement
+from IDLS_API.models import Measurement, Production
 from IDLS_API.models import Coordination
 from django.db import connection, transaction
 from datetime import datetime
@@ -43,8 +43,8 @@ def api_handler_mobile(request):
         Location_ID_i = income_data['loc_id']
         Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
-        Mes = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, Location_ID = Location_ID_i, Time = Time_i)
-        Mes.save()
+        prod = Production(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, Location_ID = Location_ID_i, Time = Time_i)
+        prod.save()
 
         return HttpResponse('OK')
     return HttpResponse('hehe')
