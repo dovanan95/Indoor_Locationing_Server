@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import django_heroku
 import pymysql
-import mysql.connector
+import MySQLdb
 #import mysqlclient
 from pathlib import Path
 #pymysql.version_info = (1, 3, 13, "final", 0)
