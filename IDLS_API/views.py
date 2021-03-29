@@ -26,12 +26,14 @@ def api_handler(request):
         #Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
         Mes = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
-        Location_ID = Location_ID_i, Time = Time_i)
+        Location_ID = Location_ID_i)
         Mes.save()
 
         #return HttpResponse('OK')
         return HttpResponse(BSSID_i, RSSI_i)
-    return HttpResponse('Bạn đã bị nhiễm covid 19')
+    elif(request.GET):
+        return HttpResponse('Bạn đã bị nhiễm covid 19')
+    
 
 @csrf_exempt
 def api_handler_mobile(request):
@@ -45,8 +47,10 @@ def api_handler_mobile(request):
         #Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
         prod = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
-        Location_ID = Location_ID_i, Time = Time_i)
+        Location_ID = Location_ID_i)
         prod.save()
 
         return HttpResponse('OK')
-    return HttpResponse('hehe')
+    elif(request.GET):
+            return HttpResponse('Bạn đã bị nhiễm covid 19')
+    
