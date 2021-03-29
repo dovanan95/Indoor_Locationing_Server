@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
 import os
-from IDLS_API.models import Measurement, Production
-from IDLS_API.models import Coordination
+from IDLS_API.models import Measurement
+
 from django.db import connection, transaction
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
