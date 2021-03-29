@@ -4,4 +4,4 @@ from IDLS_API.models import Measurement
 class serialMes(serializers.ModelSerializer):
     class Meta:
         model = Measurement
-        fields = '__all__'
+        fields = ['RSSI', 'BSSID', 'SSID', 'Location_ID']
