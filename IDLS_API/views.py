@@ -19,11 +19,11 @@ def api_handler(request):
     if(request.POST):
         income_data = json.loads(request.body)
         now = datetime.now()
-        BSSID_i = income_data['bssid']
-        SSID_i = income_data['ssid']
-        RSSI_i = float(income_data['rssi'])
-        Location_ID_i = income_data['loc_id']
-        Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
+        BSSID_i = income_data['BSSID']
+        SSID_i = income_data['SSID']
+        RSSI_i = float(income_data['RSSI'])
+        Location_ID_i = income_data['Location_ID']
+        #Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
         Mes = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
         Location_ID = Location_ID_i, Time = Time_i)
@@ -38,11 +38,11 @@ def api_handler_mobile(request):
     if(request.POST):
         income_data = json.loads(request.body)
         now = datetime.now()
-        BSSID_i = income_data['bssid']
-        SSID_i = income_data['ssid']
-        RSSI_i = float(income_data['rssi'])
-        Location_ID_i = income_data['loc_id']
-        Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
+        BSSID_i = income_data['BSSID']
+        SSID_i = income_data['SSID']
+        RSSI_i = float(income_data['RSSI'])
+        Location_ID_i = income_data['Location_ID']
+        #Time_i = now.strftime("%d/%m/%Y %H:%M:%S")
 
         prod = Measurement(BSSID = BSSID_i, SSID = SSID_i, RSSI = RSSI_i, 
         Location_ID = Location_ID_i, Time = Time_i)
