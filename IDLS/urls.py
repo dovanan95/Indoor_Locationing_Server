@@ -16,14 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
-#from django.urls import path, include
+from django.urls import path, include
 from django.conf.urls.static import static
 from IDLS_API.views import api_handler, api_handler_mobile
+from IDLS_API.api.views import mobile_handler
+import rest_framework
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^IDLS/API/handler', api_handler, name='api_handler'),
-    url(r'^IDLS/API/handler_mobile', api_handler_mobile, name='api_mobile')
+    url(r'^IDLS/API/handler_mobile', api_handler_mobile, name='api_mobile'),
+    #path('api-auth', include('rest_framework.urls')),
+    url(r'^idls_api/api/mes/mobile_handler', mobile_handler, name='mes_api_mobile')
 ]
 
 if settings.DEBUG:
