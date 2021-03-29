@@ -31,8 +31,7 @@ def api_handler(request):
 
         #return HttpResponse('OK')
         return HttpResponse(BSSID_i, RSSI_i)
-    elif(request.GET):
-        return HttpResponse('Bạn đã bị nhiễm covid 19')
+    return HttpResponse('Bạn đã bị nhiễm covid 19')
     
 
 @csrf_exempt
@@ -51,6 +50,6 @@ def api_handler_mobile(request):
         prod.save()
 
         return HttpResponse('OK')
-    elif(request.GET):
-            return HttpResponse('Bạn đã bị nhiễm covid 19')
+    
+    return HttpResponse('Bạn đã bị nhiễm covid 19')
     
